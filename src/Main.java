@@ -3,17 +3,17 @@ import java.util.Arrays;
 public class Main {
 	
 	//Divide
-	public void mergeSort(int ar[], int n) {
-		//1° Step
-		//In base ai principi del Merge Sort se la lunghezza del vettore è >= 1 l'array è già ordinato
+	public static void mergeSort(int ar[], int n) {
+		//1ï¿½ Step
+		//In base ai principi del Merge Sort se la lunghezza del vettore ï¿½ >= 1 l'array ï¿½ giï¿½ ordinato
 		if(n < 2)
 			return;
 		
-		//2° Step
+		//2ï¿½ Step
 		//Identificati attori dell'algoritmo
-		//Mid è la lunghezza media del vettore
-		//l[] è il vettore di sinistra che dovrà essere scomposto a sua volta
-		//r[] è il vettore di destra che dovrà essere scomposto a sua volta
+		//Mid ï¿½ la lunghezza media del vettore
+		//l[] ï¿½ il vettore di sinistra che dovrï¿½ essere scomposto a sua volta
+		//r[] ï¿½ il vettore di destra che dovrï¿½ essere scomposto a sua volta
 		int mid = n / 2;
 		int l[] = new int[mid];
 		int r[] = new int[n - mid];
@@ -26,12 +26,12 @@ public class Main {
 		for(int i = mid; i < n; i++) 
 			r[i - mid] = ar[i];
 		
-		//3° Step
+		//3ï¿½ Step
 		//Ordino i due sub-arrays
 		mergeSort(l, mid);
 		mergeSort(r, n - mid);
 		
-		//4° step
+		//4ï¿½ step
 		//Eseguo il merge dei due sub-arrays
 		merge(ar, l, r, mid, n - mid);
 	}
@@ -58,10 +58,7 @@ public class Main {
 	public static void main(String []args) {
 		System.out.println("Merge Sort");
 		int ar[] = {3,6,19,4,5,0,8,2};
-		
-		Main main = new Main();
-		main.mergeSort(ar, ar.length);
-		
+		mergeSort(ar, ar.length);
 		System.out.println(Arrays.toString(ar));
 	}
 	
